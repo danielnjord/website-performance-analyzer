@@ -4,8 +4,11 @@ import pandas as pd
 import requests
 from urllib.parse import urlparse, urljoin
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dotenv import load_dotenv
 
-API_KEY = "AIzaSyAmAiMBYXrH2h5GLKifsgagsECCiu6wvuU"
+load_dotenv()
+
+API_KEY = os.getenv("GOOGLE_API_KEY")
 
 PERFORMANCE_THRESHOLD = 70
 LCP_THRESHOLD_MS = 3500
